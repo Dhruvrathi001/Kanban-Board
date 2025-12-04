@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KanBan Board</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Add Task Modal -->
+    <div class="modal" id="add-task-modal">
+      <div class="bg"></div>
+      <div class="modal-content center">
+        <h3>Add New Task</h3>
+        <input type="text" id="task-title-input" placeholder="Task Title" />
+        <textarea id="task-desc-input" placeholder="Task Description"></textarea>
+        <button class="task-btn cta" id="add-new-task">Add New Task</button>
+      </div>
+    </div>
+
+    <!-- Delete Confirm Modal -->
+    <div class="modal" id="delete-confirm-modal">
+      <div class="bg"></div>
+      <div class="modal-content center delete-modal-content">
+        <h3>Delete Task</h3>
+        <p class="delete-text">
+          Do you want to delete this task? This action cannot be undone.
+        </p>
+        <div class="delete-actions">
+          <button class="task-btn" id="cancel-delete">No, keep it</button>
+          <button class="task-btn danger" id="confirm-delete">
+            Yes, delete it
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <nav class="navbar">
+        <div class="left">KanBan-Board</div>
+        <div class="right">
+          <button class="task-btn cta" id="toggle-modal">Add new Task</button>
+        </div>
+      </nav>
+
+      <section class="board">
+        <div id="to-do" class="task-column" data-status="todo">
+          <div class="heading">
+            <div class="left">To-Do</div>
+            <div class="right">Count: 0</div>
+          </div>
+        </div>
+
+        <div id="to-progress" class="task-column" data-status="progress">
+          <div class="heading">
+            <div class="left">To-Progress</div>
+            <div class="right">Count: 0</div>
+          </div>
+        </div>
+
+        <div id="done" class="task-column" data-status="done">
+          <div class="heading">
+            <div class="left">Done</div>
+            <div class="right">Count: 0</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
